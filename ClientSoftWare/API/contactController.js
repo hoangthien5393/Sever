@@ -159,7 +159,7 @@ exports.SeparateView = async function (req, res) {
 exports.SeparateUpdate = async function (req, res) {
     try {
         var DeviceId = req.params.DeviceID;
-        var result = await mainSeparateFloor.update(req.body, DeviceId);
+        var result = await mainSeparateFloor.Delete(req.body, DeviceId);
         res.send(result);
     } catch (error) {
         res.status(500).send(error);

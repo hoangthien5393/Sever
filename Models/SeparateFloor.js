@@ -127,7 +127,7 @@ let SeparateFloorSchema = new mongoose.Schema({
       async Delete(data, DeviceID)
       {
         var dataSeparateFloor = mongoose.model('SeparateFloor' + DeviceID, SeparateFloorSchema);
-        var res = await dataSeparateFloor.deleteOne({_id: data}, function (err) {
+        var res = await dataSeparateFloor.deleteMany({_id: data}, function (err) {
             if (err) return handleError(err);
             // saved!
           });
